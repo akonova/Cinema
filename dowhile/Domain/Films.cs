@@ -6,23 +6,22 @@ namespace dowhile.Domain
 {
     public class Films
     {
-        int amountOfTickets = 20; //{ get; set; }
-        int ticketsRest; //{ get; set; }
-        int ticketsnumber;
+        int amountAvailable = 20;
+        int ticketsRest;
+        int ticketsNumber;
 
-        public int CountTicketsRest(int ticketsnumber)
+        public void CountTicketsRest(int ticketsNumber)
         {
-            if ()
-
-
-            do
+            if (ticketsNumber > amountAvailable)            
             {
-               ticketsRest = amountOfTickets - ticketsnumber;
-               return ticketsRest;
+                Console.WriteLine("Sorry, we don't have that many tickets available");
             }
-            while (ticketsRest > 0);
+            else
+            {
+                amountAvailable = amountAvailable - ticketsNumber;
 
-            Console.WriteLine(" All tickets are sold.");
+                Console.WriteLine("Congratulations, you just bought " + ticketsNumber + " tickets!");
+            }
         }
     }
 }

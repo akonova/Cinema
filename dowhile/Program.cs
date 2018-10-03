@@ -1,27 +1,27 @@
 ﻿using System;
+using dowhile.Domain;
 
 namespace dowhile
 {
     class Program
     {
-
-
         static void Main(string[] args)
         {
-
-
             {
-              
                 int price =5;
                 string UsersChoice;
+
                 Console.WriteLine("Do you want to see a movieslist? Type Yes or No");
+
                 UsersChoice = Console.ReadLine().ToUpper();
+
+                Films films = new Films();
 
                 if (UsersChoice == "YES")
                 {
                     Start:
-                    Console.WriteLine("Which Film do you want to see? Type A , B or C");
-                    UsersChoice = Console.ReadLine().ToUpper();
+                        Console.WriteLine("Which Film do you want to see? Type A , B or C");
+                        UsersChoice = Console.ReadLine().ToUpper();
 
                     switch (UsersChoice)
                     {
@@ -30,8 +30,10 @@ namespace dowhile
                         case "C":
                           
                             Console.WriteLine(" Your choice is movie {0}. How many tickets do you want to buy?", UsersChoice);
+
                             int ticketsnumber = int.Parse(Console.ReadLine());
-                            Films.CountTicketsRest(ticketsnumber);
+
+                            films.CountTicketsRest(ticketsnumber);
 
                             int c = ticketsnumber * price;
                             Console.WriteLine(" Your buy cost is: {0}.   Do you want to continue shoping?", Convert.ToString(c));
